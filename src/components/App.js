@@ -18,6 +18,10 @@ class App extends React.Component {
 
     return (
       <div className="App row">
+        <div>
+          <h1>Playlists</h1>
+          <PlaylistCollection playlists={data.playlists} />
+        </div>
       </div>
     );
   }
