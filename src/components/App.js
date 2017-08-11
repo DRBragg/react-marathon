@@ -23,7 +23,7 @@ class App extends React.Component {
         <div>
           <h1>Playlists</h1>
           <PlaylistCollection playlists={data.playlists} />
-          <SongCollection songs={data.playlists.songs}/>
+          <SongCollection songs={selectedPlaylistSongs}/>
         </div>
       </div>
     );
