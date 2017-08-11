@@ -15,11 +15,14 @@ class PlaylistCollection extends React.Component {
         className = ""
       }
 
+      let handlePlaylistSelect = () => this.props.handlePlaylistSelect(playlist.id)
+
       return(
         <Playlist
           key={playlist.id}
           playlist={playlist}
           className={className}
+          handlePlaylistSelect={handlePlaylistSelect}
         />
       )
     })
