@@ -1,38 +1,27 @@
 import React from 'react';
 import Song from './Song'
 
-class SongCollection extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+const SongCollection = (props) => {
+  let songs = props.songs.map(song => {
+    let className = song.id === props.playing ? "selected" : ""
 
-  render() {
-    let className;
-    let songs = this.props.songs.map(song => {
-      if (song.id === this.props.playing) {
-        className = "selected"
-      } else {
-        className = ""
-      }
-
-      let handleSongSelect = () => this.props.handleSongSelect(song.id)
-
-      return(
-        <Song
-          key={song.id}
-          song={song}
-          className={className}
-          handleSongSelect={handleSongSelect}
-        />
-      )
-    })
+    let handleSongSelect = () => props.handleSongSelect(song.id)
 
     return(
-      <ul>
-        {songs}
-      </ul>
+      <Song
+        key={song.id}
+        song={song}
+        className={className}
+        handleSongSelect={handleSongSelect}
+      />
     )
-  }
+  })
+
+  return(
+    <ul>
+      {songs}
+    </ul>
+  )
 }
 
 export default SongCollection
