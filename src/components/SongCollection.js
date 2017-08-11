@@ -15,11 +15,14 @@ class SongCollection extends React.Component {
         className = ""
       }
 
+      let handleSongSelect = () => this.props.handleSongSelect(song.id)
+
       return(
         <Song
           key={song.id}
           song={song}
           className={className}
+          handleSongSelect={handleSongSelect}
         />
       )
     })

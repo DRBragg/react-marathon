@@ -14,6 +14,7 @@ class PlaylistCollection extends React.Component {
       } else {
         className = ""
       }
+
       return(
         <Playlist
           key={playlist.id}

@@ -4,7 +4,7 @@ const Song = (props) => {
 
   return(
     <div>
-      <li className={props.className}>{props.song.name} - {props.song.artist}</li>
+      <li onClick={props.handleSongSelect} className={props.className}>{props.song.name} - {props.song.artist}</li>
     </div>
   )
 }
