@@ -33,11 +33,17 @@ class App extends React.Component {
 
     let selectedPlaylistSongs = data.songs.filter(filterById);
 
+    let title = (this.props.data.playlists.find(playlist => playlist.id === this.state.selectedPlaylistId)).name
+
     return (
       <div className="App row">
         <div>
-          <h1>Playlists</h1>
+          <h1>{title}</h1>
+        </div>
+        <div className="PlaylistCollection columns small-6">
           <PlaylistCollection playlists={data.playlists} selectedPlaylist={this.state.selectedPlaylistId} handlePlaylistSelect={this.handlePlaylistSelect}/>
+        </div>
+        <div className="SongList columns small-6">
           <SongCollection songs={selectedPlaylistSongs} playing={this.state.selectedSongId} handleSongSelect={this.handleSongSelect}/>
         </div>
       </div>
