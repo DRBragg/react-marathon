@@ -7,11 +7,18 @@ class PlaylistCollection extends React.Component {
   }
 
   render() {
+    let className
     let playlists = this.props.playlists.map(playlist => {
+      if (playlist.id === this.props.selectedPlaylist) {
+        className = "selected"
+      } else {
+        className = ""
+      }
       return(
         <Playlist
           key={playlist.id}
           playlist={playlist}
+          className={className}
         />
       )
     })

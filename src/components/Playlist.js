@@ -4,7 +4,7 @@ const Playlist = (props) => {
 
   return(
     <div>
-      <li>{props.playlist.name}</li>
+      <li className={props.className}>{props.playlist.name}</li>
     </div>
   )
 }

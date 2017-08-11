@@ -22,7 +22,7 @@ class App extends React.Component {
       <div className="App row">
         <div>
           <h1>Playlists</h1>
-          <PlaylistCollection playlists={data.playlists} />
+          <PlaylistCollection playlists={data.playlists} selectedPlaylist={data.selectedPlaylistId}/>
           <SongCollection songs={selectedPlaylistSongs} playing={data.selectedSongId}/>
         </div>
       </div>
