@@ -1,4 +1,5 @@
 import React from 'react';
+import Song from './Song'
 
 class SongCollection extends React.Component {
   constructor(props) {
